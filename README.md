@@ -18,19 +18,19 @@ In this study, we revisit the performance analysis of distributed beamforming ar
 * all_functions.py contains the code of all the building blocks required for the results.
 * results.ipynb has the complete pipeline to plot cdfs
 
-Note: 
--The simulation params used in the notebook are for a very small network setup (runnable on any laptop).
+**Note** 
+-The simulation parameters used in the notebook are for a very small network setup (runnable on any laptop).
 -Parameters used in the work are also obtainable by using a system(on server maybe) where 100Gb memory can be reserved for computational space.
 -Dummy graphs that have dependency on density and power might show some deviations with the graphs presented in the paper. (specifically fig1b and fig2b. Exact results are reproduceable for large setup)
 
-Tips:
-In beamforming functions, when calculating beamformers, a parameter "batch" is used.
+**Tips**
+In beamforming functions, when calculating beamformers, a parameter 'batch' is used.
 batch=200  # batch means computations will be performed in batchs of 200 realizations at a time. batch =1 means code will loop over 1 realization at a time, batch=realizations means all realizations at a time. 
 *** Mathematically everything stays correct, its tradeoff between computation time and computation space depending upon system.
 
 
-Critical Points:
-Parameter "realizations" is critical. Realizations should be a large value if large number APs and UEs are used. In thesis, realizations =10000 for AP=100 and UE=40. In notebook, its set to 200, because small number of AP and UEs is used.
+**Critical Points**
+Parameter 'realizations' is critical. Realizations should be a large value if large number APs and UEs are used. In thesis, realizations =10000 for AP=100 and UE=40. In notebook, its set to 200, because small number of AP and UEs is used.
 
 Warning: The name of some variables may differ from the notation adopted in the paper.
 
