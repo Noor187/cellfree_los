@@ -549,7 +549,7 @@ def calculate_local_scattering(N, varPhi, varTheta, varAntennaSpacing):
         spatial_corr_UE[n] = res_real[0] + 1j * res_imag[0]
 
     # Compute the spatial correlation matrix by utilizing the Toeplitz structure
-    R = linalg.toeplitz(spatial_corr_UE)  # integral gives Nx1, we need to calculate NxN matrix from it
+    R = linalg.toeplitz(spatial_corr_UE.ravel())  # integral gives Nx1, we need to calculate NxN matrix from it
     R = R / np.trace(R)  # normalizing
     return R
 
